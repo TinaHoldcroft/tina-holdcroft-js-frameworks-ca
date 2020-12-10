@@ -8,12 +8,12 @@ import Form from "react-bootstrap/Form";
 const schema = yup.object().shape({
     firstName: yup
         .string()
-        .min(2, 'Name must conatin at least 2 characters')
+        .min(2, 'Name must contain at least 2 characters')
         .matches(/[a-zA-z-\s]/g, 'Only characters A-Z are valid')
         .required(),
     lastName: yup
         .string()
-        .min(2, 'Name must conatin at least 2 characters')
+        .min(2, 'Name must contain at least 2 characters')
         .matches(/[a-zA-z-\s]/g, 'Only characters A-Z are valid')
         .required(),
     email: yup
