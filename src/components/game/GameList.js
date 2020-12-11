@@ -43,11 +43,11 @@ function GameList() {
 			<Search handleSearch={filterCards} />
 			<Row>
 				{filteredGames.map(game => {
-					const { id, name, image } = game;
+					const { id, name, image_background, rating, released } = game;
 
 					return (
 						<Col sm={6} md={3} key={id}>
-							<GameItem id={id} name={name} image={image} />
+							<GameItem id={id} name={name} image_background={image_background} rating={rating} released={released} />
 						</Col>
 					);
 				})}
@@ -55,5 +55,6 @@ function GameList() {
 		</>
 	);
 }
+
 
 export default GameList;
