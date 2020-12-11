@@ -1,16 +1,11 @@
 import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink, } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
-import Game from "../game/Game";
 import Contact from "../contact/Contact";
+import GameDetail from "../game/GameDetail";
 
 function Layout() {
     return (
@@ -23,7 +18,6 @@ function Layout() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <NavLink to="/" exact className="nav-link">Home</NavLink>
-                        <NavLink to="/game" className="nav-link">Game</NavLink>
                         <NavLink to="/contact" className="nav-link">Contact</NavLink>
                     </Nav>
                 </Navbar.Collapse>
@@ -31,8 +25,8 @@ function Layout() {
             <Container>
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/game" component={Game} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/game/:id" component={GameDetail} />
                 </Switch>
             </Container>
         </Router>
