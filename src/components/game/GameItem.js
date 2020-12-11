@@ -22,10 +22,8 @@ function GameItem({ id, name, image }) {
 
 GameItem.propTypes = {
 	id: PropTypes.number.isRequired,
-	title: PropTypes.string,
-	image: PropTypes.string,
-	rating: PropTypes.number,
-	releaseDate: PropTypes.string
+	name: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired
 };
 
 export default GameItem;
