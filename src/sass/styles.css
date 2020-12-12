@@ -15,8 +15,7 @@
 }
 
 .error {
-  color: #0069d9;
-  font-weight: 900;
+  color: #ffa500;
 }
 
 form {
@@ -25,11 +24,13 @@ form {
 
 .card {
   margin-bottom: 30px;
-  box-shadow: 0px 3px 16px #ccc;
+  box-shadow: 0px 5px 16px #a8a7a7;
   transition: all 0.4s;
+  height: 95%;
 }
 .card:hover {
-  box-shadow: 0 0 0 #ccc;
+  z-index: 9;
+  transform: scale(1.2);
 }
 
 .card-title.h5 {
@@ -54,6 +55,12 @@ form {
 .detail-image {
   width: 100%;
   margin: 1rem;
+}
+
+.spinner {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
 }
 
 /*# sourceMappingURL=styles.css.map */

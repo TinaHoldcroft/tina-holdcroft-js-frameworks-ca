@@ -6,7 +6,7 @@ import "./sass/styles.scss";
 function App() {
     return (
         <Layout>
-            <Heading title="Title from prop" subtitle="Subtitle from prop" />
+            <Heading title="Title from prop" subtitle="Subtitle from prop"/>
         </Layout>
     );
 }

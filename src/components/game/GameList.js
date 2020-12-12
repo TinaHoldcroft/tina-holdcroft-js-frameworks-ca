@@ -23,7 +23,7 @@ function GameList() {
 	}, []);
 
 	const filterCards = function(e) {
-		const searchValue = e.target.value.toLowerCase();// lowercase
+		const searchValue = e.target.value.toLowerCase(); // lowercase
 		const filteredArray = games.filter(function(g) {
 			const lowerCaseName = g.name.toLowerCase(); // lowercase
 			if (lowerCaseName.startsWith(searchValue)) { // check if the game name begins with the search value
@@ -34,27 +34,23 @@ function GameList() {
 		setFilteredGames(filteredArray);
 	};
 
-	if (loading) {
-		return <Spinner animation="border" className="spinner" />;
-	}
+	if (loading) { return <Spinner animation="border" className="spinner"/>; }
 
 	return (
 		<>
-			<Search handleSearch={filterCards} />
+			<Search handleSearch={filterCards}/>
 			<Row>
 				{filteredGames.map(game => {
 					const { id, name, background_image, rating, released } = game;
-
 					return (
 						<Col sm={6} md={3} key={id}>
-							<GameItem id={id} name={name} background_image={background_image} rating={rating} released={released} />
+							<GameItem id={id} name={name} background_image={background_image} rating={rating} released={released}/>
 						</Col>
-					);
-				})}
+					)
+				;})}
 			</Row>
 		</>
 	);
 }
-
 
 export default GameList;

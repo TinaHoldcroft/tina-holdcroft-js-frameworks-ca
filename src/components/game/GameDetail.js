@@ -9,9 +9,7 @@ import { BASE_URL } from "../../constants/api";
 function GameDetail() {
 	const [detail, setDetail] = useState(null);
 	const [loading, setLoading] = useState(true);
-
 	let { id } = useParams();
-
 	const url = BASE_URL + "/" + id;
 
 	useEffect(() => {
@@ -23,7 +21,7 @@ function GameDetail() {
 	}, [url]);
 
 	if (loading) {
-		return <Spinner animation="border" className="spinner" />;
+		return <Spinner animation="border" className="spinner"/>;
 	}
 
 	return (
@@ -33,7 +31,7 @@ function GameDetail() {
 			</Col>
 			<Col>
 				<h1>{detail.name}</h1>
-				<div dangerouslySetInnerHTML={{ __html: detail.description }} />
+				<div dangerouslySetInnerHTML={{ __html: detail.description }}/>
 				<a target={"_blank"} rel="noreferrer" href={detail.website}> View Website</a>
 			</Col>
 		</Row>

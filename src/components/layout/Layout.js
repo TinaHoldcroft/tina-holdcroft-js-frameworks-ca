@@ -12,9 +12,9 @@ function Layout() {
         <Router>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <NavLink to="/" exact>
-                    <Navbar.Brand>JS Frameworks</Navbar.Brand>
+                    <Navbar.Brand>JS Frameworks CA</Navbar.Brand>
                 </NavLink>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <NavLink to="/" exact className="nav-link">Home</NavLink>
@@ -24,9 +24,9 @@ function Layout() {
             </Navbar>
             <Container>
                 <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/contact" component={Contact} />
-                    <Route path="/game/:id" component={GameDetail} />
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/contact" component={Contact}/>
+                    <Route path="/game/:id" component={GameDetail}/>
                 </Switch>
             </Container>
         </Router>
