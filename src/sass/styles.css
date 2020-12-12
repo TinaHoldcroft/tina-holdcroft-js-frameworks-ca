@@ -1,3 +1,24 @@
+.layout {
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  background: #ebebeb;
+  margin: 0 auto;
+}
+
+.detail-page {
+  flex-flow: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.error {
+  color: #0069d9;
+  font-weight: 900;
+}
+
 form {
   margin-top: 3rem;
 }
@@ -33,27 +54,6 @@ form {
 .detail-image {
   width: 100%;
   margin: 1rem;
-}
-
-.detail-page {
-  flex-flow: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-}
-
-.layout {
-  width: 100%;
-  max-width: 800px;
-  padding: 30px;
-  background: #ebebeb;
-  margin: 0 auto;
-}
-
-.error {
-  color: #0069d9;
-  font-weight: 900;
 }
 
 /*# sourceMappingURL=styles.css.map */
