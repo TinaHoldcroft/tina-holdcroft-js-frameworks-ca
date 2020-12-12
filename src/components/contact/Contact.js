@@ -32,7 +32,8 @@ function Contact() {
     });
   
     function onSubmit(data) {
-        console.log("data", data);
+        console.log("data", data)
+        alert('Your form has been submitted');
     }
 
   return (
