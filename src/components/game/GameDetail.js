@@ -12,7 +12,7 @@ function GameDetail() {
 
 	let { id } = useParams();
 
-	const url = BASE_URL + id;
+	const url = BASE_URL + "/" + id;
 
 	useEffect(() => {
 		fetch(url)
@@ -27,15 +27,14 @@ function GameDetail() {
 	}
 
 	return (
-		<Row>
-			<Col md={6} className="detail-image">
-				<Image src={detail.image_background} roundedCircle />
+		<Row className="detail-page">
+			<Col md={6}>
+				<Image className="detail-image" src={detail.background_image} rounded/>
 			</Col>
 			<Col>
 				<h1>{detail.name}</h1>
-				<p><b>Title:</b> {detail.name}</p>
-				<p><b>Description:</b> {detail.description}</p>
-				<p><b>Website:</b> {detail.domain}</p>
+				<div dangerouslySetInnerHTML={{ __html: detail.description }} />
+				<a target={"_blank"} rel="noreferrer" href={detail.website}> View Website</a>
 			</Col>
 		</Row>
 	);

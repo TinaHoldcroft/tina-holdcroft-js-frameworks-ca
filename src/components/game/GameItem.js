@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-function GameItem({ id, name, image_background, rating, released }) {
+function GameItem({ id, name, background_image, rating, released }) {
 	return (
 		<Card>
-			<Card.Img variant="top" src={image_background} />
+			<Card.Img variant="top" src={background_image} />
 			<Card.Body>
 				<Card.Title><b>Title: </b>{name}</Card.Title>
 				<Card.Title><b>Rating: </b>{rating}</Card.Title>
@@ -25,7 +25,7 @@ GameItem.propTypes = {
 	rating: PropTypes.number.isRequired,
 	name: PropTypes.string.isRequired,
 	released: PropTypes.string.isRequired,
-	image_background: PropTypes.string.isRequired
+	background_image: PropTypes.string.isRequired
 };
 
 export default GameItem;

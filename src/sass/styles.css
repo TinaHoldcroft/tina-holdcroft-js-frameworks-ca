@@ -30,6 +30,19 @@ form {
   margin-left: 10px;
 }
 
+.detail-image {
+  width: 100%;
+  margin: 1rem;
+}
+
+.detail-page {
+  flex-flow: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
 .layout {
   width: 100%;
   max-width: 800px;
