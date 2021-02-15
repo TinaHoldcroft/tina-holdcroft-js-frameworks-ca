@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
 function GameItem({ id, name, background_image, rating, released }) {
 	return (
-		<Card>
-			<Card.Img variant="top" src={background_image}/>
-			<Card.Body>
-				<Card.Title><b>Title: </b>{name}</Card.Title>
-				<Card.Title><b>Rating: </b>{rating}</Card.Title>
-				<Card.Title><b>Released: </b>{released}</Card.Title>
-				<Link to={"game/" + id}>
-					<Button variant="secondary" block>View</Button>
-				</Link>
-			</Card.Body>
-		</Card>
+		<div className="card">
+			<img alt={name} src={background_image}/>
+			<div>
+				<p><b>Title: </b>{name}</p>
+				<p><b>Rating: </b>{rating}</p>
+				<p><b>Released: </b>{released}</p>
+				<Link to={"game/" + id}><button>View</button></Link>		
+			</div>
+		</div>
 	);
 }
 

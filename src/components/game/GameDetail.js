@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
+import Spinner from "../spinner/Spinner";
 import { useParams } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import { BASE_URL } from "../../constants/api";
 
 function GameDetail() {
@@ -20,21 +17,17 @@ function GameDetail() {
 			.finally(() => setLoading(false));
 	}, [url]);
 
-	if (loading) {
-		return <Spinner animation="border" className="spinner"/>;
-	}
+	if (loading) { return <Spinner/>; }
 
 	return (
-		<Row className="detail-page">
-			<Col md={6}>
-				<Image className="detail-image" src={detail.background_image} rounded/>
-			</Col>
-			<Col>
+		<div className="detail-page">
+			<img alt={detail.name} className="detail-image" src={detail.background_image}/>
+			<div>
 				<h1>{detail.name}</h1>
 				<div dangerouslySetInnerHTML={{ __html: detail.description }}/>
 				<a target={"_blank"} rel="noreferrer" href={detail.website}> View Website</a>
-			</Col>
-		</Row>
+			</div>
+		</div>
 	);
 }
 

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Spinner from "../spinner/Spinner";
 import GameItem from "./GameItem";
 import { BASE_URL } from "../../constants/api";
 import Search from "./Search";
@@ -34,21 +32,19 @@ function GameList() {
 		setFilteredGames(filteredArray);
 	};
 
-	if (loading) { return <Spinner animation="border" className="spinner"/>; }
+	if (loading) { return <Spinner/>; }
 
 	return (
 		<>
 			<Search handleSearch={filterCards}/>
-			<Row>
+			<div className="cards-wrapper">
 				{filteredGames.map(game => {
 					const { id, name, background_image, rating, released } = game;
 					return (
-						<Col sm={6} md={3} key={id}>
-							<GameItem id={id} name={name} background_image={background_image} rating={rating} released={released}/>
-						</Col>
+						<GameItem id={id} name={name} background_image={background_image} rating={rating} released={released}/>
 					)
 				;})}
-			</Row>
+			</div>
 		</>
 	);
 }

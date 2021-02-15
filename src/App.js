@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect  } from "react-router-
 import Home from "./components/home/Home";
 import Contact from "./components/contact/Contact";
 import GameDetail from "./components/game/GameDetail";
-import Layout from "./components/layout/Layout";
+import Nav from "./components/layout/Nav";
 
 function App() {
     return (
         <Router>
-            <Layout/>
+            <Nav/>
             <Switch>
                 <Route path="/" exact component={Home}/>
                 <Route path="/contact" exact component={Contact}/>
