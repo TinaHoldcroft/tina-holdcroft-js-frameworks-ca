@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Heading from "../layout/Heading";
 
 const schema = yup.object().shape({
     firstName: yup
@@ -35,6 +36,7 @@ function Contact() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+            <Heading title="Contact"/>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
                 <Form.Control type="text" name="firstName" placeholder="Enter your first name" ref={register}/>

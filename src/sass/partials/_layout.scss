@@ -1,5 +1,5 @@
 .layout {
-    width: 100%;
+    width: 100vw;
     max-width: 800px;
     padding: 30px;
     background: #ebebeb;
@@ -11,4 +11,7 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+body {
+    margin: 0.5rem;
 }
