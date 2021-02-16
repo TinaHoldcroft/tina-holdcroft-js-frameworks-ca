@@ -1,15 +1,27 @@
 import React from "react";
 
+
 function Favorites() {
-    const items =  JSON.stringify({ ...localStorage }).replace(",", "\n ");
-    const two = items.replace(/[^\w\s]/gi, " "); //remove all special characters
-    const three = two.replace(/\d/g, ""); //remove all digits
+    const allItems =  JSON.stringify({ ...localStorage }).replace(",", "\n ");
     //localStorage.clear();
+   
+
+    for(var i =0; i < localStorage.length; i++) {
+        const key = localStorage.key(i)
+        console.log(localStorage.getItem(key));
+    }
+
+    
     return (
-        <div className="favor"> 
-            <div>{three}</div>
-        </div>
+        
+        <>
+        <p>{allItems}
+        </p>
+
+        </>
     );
-}
+} 
+
+
 
 export default Favorites;
