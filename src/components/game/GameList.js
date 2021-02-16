@@ -41,7 +41,7 @@ function GameList() {
 				{filteredGames.map(game => {
 					const { id, name, background_image, rating, released } = game;
 					return (
-						<GameItem id={id} name={name} background_image={background_image} rating={rating} released={released}/>
+						<GameItem key={id} id={id} name={name} background_image={background_image} rating={rating} released={released}/>
 					)
 				;})}
 			</div>

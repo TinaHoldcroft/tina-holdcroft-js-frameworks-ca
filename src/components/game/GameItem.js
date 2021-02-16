@@ -8,15 +8,15 @@ function GameItem({ id, name, background_image, rating, released }) {
     const saveFavourite = () => {
         favourite(like ? false : true);
 		if (like === false) {
-			localStorage.setItem(id, JSON.stringify(name));
+			localStorage.setItem(id, name);
 		}
 		if (like === true) {
-			localStorage.removeItem(id, JSON.stringify(name));
+			localStorage.removeItem(id, name);
 		}
     };
 
 	return (
-		<div className="card">
+		<div className="card" key={id}>
 			<img alt={name} src={background_image}/>
 			<div>
 			<i onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
