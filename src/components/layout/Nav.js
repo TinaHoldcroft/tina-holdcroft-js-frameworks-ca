@@ -11,6 +11,7 @@ function Layout() {
             </NavLink>
             <NavLink to="/" exact className="nav-link">Games</NavLink>
             <NavLink to="/contact" className="nav-link">Contact</NavLink>
+            <NavLink to="/favorites" className="nav-link">Favorites</NavLink>
         </div>
     );
 }

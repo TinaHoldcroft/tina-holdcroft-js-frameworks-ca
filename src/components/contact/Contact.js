@@ -2,8 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+
 import Heading from "../layout/Heading";
 
 const schema = yup.object().shape({
@@ -37,27 +36,24 @@ function Contact() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Heading title="Contact"/>
-            <Form.Group>
-                <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" name="firstName" placeholder="Enter your first name" ref={register}/>
+
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="Enter your first name" ref={register}/>
                 <p className="error">{errors.firstName?.message}</p>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" name="lastName" placeholder="Enter your last name" ref={register}/>
+
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Enter your last name" ref={register}/>
                 <p className="error">{errors.lastName?.message}</p>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>E-mail</Form.Label>
-                <Form.Control name="email" placeholder="Enter your email" ref={register}/>
+
+                <label>E-mail</label>
+                <input type="email" name="email" placeholder="Enter your email" ref={register}/>
                 <p className="error">{errors.email?.message}</p>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Message</Form.Label>
-                <Form.Control type="message" name="message" placeholder="Enter your message" ref={register}/>
+
+                <label>Message</label>
+                <input type="message" name="message" placeholder="Enter your message" ref={register}/>
                 <p className="error">{errors.message?.message}</p>
-            </Form.Group>
-            <Button type="submit">Submit</Button>
+                
+                <button type="submit">Submit</button>
         </form>
     );
 }
