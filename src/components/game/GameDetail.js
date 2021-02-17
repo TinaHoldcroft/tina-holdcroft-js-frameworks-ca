@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
 
 function GameDetail() {
+	const [like, favourite] = useState(false);
 	const [detail, setDetail] = useState(null);
 	const [loading, setLoading] = useState(true);
 	let { id } = useParams();
@@ -19,14 +20,32 @@ function GameDetail() {
 
 	if (loading) { return <Spinner/>; }
 
+	
+
+	const saveFavourite = () => {
+		favourite(like ? false : true);
+		if (like === false) {
+			const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites')) ?? [];
+			const updatedFavorites = [...favoritesFromStorage, detail.website]
+			localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+		}
+		if (like === true) {
+			const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites')) ?? [];
+			const updatedFavorites = favoritesFromStorage.filter(favorite => favorite !== detail.website);
+			localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+		}
+	};
+
 	return (
 		<div className="detail-page">
-			
 			<img alt={detail.name} className="detail-image" src={detail.background_image}/>
-			<div>
-				<h1>{detail.name}</h1>
+			<h3>{detail.name}</h3>
+			<div className="detail-txt">
+				<div className="link-wrapper">
+					<i title="save website link" onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
+					<a title="View website" target={"_blank"} rel="noreferrer" href={detail.website}> View Website for {detail.name}</a>
+				</div>
 				<div dangerouslySetInnerHTML={{ __html: detail.description }}/>
-				<a target={"_blank"} rel="noreferrer" href={detail.website}> View Website</a>
 			</div>
 		</div>
 	);
