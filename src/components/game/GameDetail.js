@@ -9,18 +9,6 @@ function GameDetail() {
 	let { id } = useParams();
 	const url = BASE_URL + "/" + id;
 
-	const [like, favourite] = useState(false);
-
-    const saveFavourite = () => {
-        favourite(like ? false : true);
-		if (like === false) {
-			localStorage.setItem(id, detail.name);
-		}
-		if (like === true) {
-			localStorage.removeItem(id, detail.name);
-		}
-    };
-
 	useEffect(() => {
 		fetch(url)
 			.then(response => response.json())
@@ -33,7 +21,7 @@ function GameDetail() {
 
 	return (
 		<div className="detail-page">
-			<i onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
+			
 			<img alt={detail.name} className="detail-image" src={detail.background_image}/>
 			<div>
 				<h1>{detail.name}</h1>

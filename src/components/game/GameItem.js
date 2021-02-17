@@ -1,15 +1,27 @@
 
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 
 function GameItem({ id, name, background_image, rating, released }) {
 
+	const [like, favourite] = useState(false);
+
+    const saveFavourite = () => {
+        favourite(like ? false : true);
+		if (like === false) {
+			localStorage.setItem('favorites', JSON.stringify(name));
+		}
+		if (like === true) {
+			localStorage.removeItem('favorites', JSON.stringify(name));
+		}
+    };
 
 	return (
 		<div className="card" key={id}>
 			<img alt={name} src={background_image}/>
-			<div>
+			<i onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
+			<div id={name}>
 				<p><b>Title: </b>{name}</p>
 				<p><b>Rating: </b>{rating}</p>
 				<p><b>Released: </b>{released}</p>
