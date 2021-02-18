@@ -6,6 +6,12 @@
     width: 0;
     height: 100px;
     z-index: 9;
+    @media only screen and (max-width: 800px)  { 
+        position: absolute;
+        top: -1.3rem;
+        right: 9em;
+        transform: scale(0.9);
+    }
     input {
         position: absolute;
         margin: auto;
@@ -26,6 +32,9 @@
         z-index: 5;
         padding-left: 2rem;
         letter-spacing: 0.1em;
+        @media only screen and (max-width: 800px)  { 
+            transform: scale(0.9);
+        }
         &:hover { cursor: pointer; }
         &:focus {
             width: 12rem;

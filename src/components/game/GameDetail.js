@@ -20,8 +20,6 @@ function GameDetail() {
 
 	if (loading) { return <Spinner/>; }
 
-	
-
 	const saveFavourite = () => {
 		favourite(like ? false : true);
 		if (like === false) {

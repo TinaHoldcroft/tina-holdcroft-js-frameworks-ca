@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Helmet } from "react-helmet";
 
 function Favorites() {
     const items = JSON.parse(localStorage.getItem('favorites'));
@@ -15,19 +15,22 @@ function Favorites() {
     const listTen = items.slice(9, 10);
 
     return (
-        <div className="saved-links">
-            <h5>Saved</h5>
-            <a target={"_blank"} rel="noreferrer" href={listOne}>{listOne} </a>
-            <a target={"_blank"} rel="noreferrer" href={listTwo}>{listTwo}</a>
-            <a target={"_blank"} rel="noreferrer" href={listThree}>{listThree}</a>
-            <a target={"_blank"} rel="noreferrer" href={listFour}>{listFour}</a>
-            <a target={"_blank"} rel="noreferrer" href={listFive}>{listFive}</a>
-            <a target={"_blank"} rel="noreferrer" href={listSix}>{listSix}</a>
-            <a target={"_blank"} rel="noreferrer" href={listSeven}>{listSeven}</a>
-            <a target={"_blank"} rel="noreferrer" href={listEight}>{listEight}</a>
-            <a target={"_blank"} rel="noreferrer" href={listNine}>{listNine}</a>
-            <a target={"_blank"} rel="noreferrer" href={listTen}>{listTen}</a>
-        </div>
+        <>
+            <Helmet><title>Saved | VGD</title></Helmet>
+            <div className="saved-links">
+                <h5>Saved</h5>
+                <a target={"_blank"} rel="noreferrer" href={listOne}>{listOne} </a>
+                <a target={"_blank"} rel="noreferrer" href={listTwo}>{listTwo}</a>
+                <a target={"_blank"} rel="noreferrer" href={listThree}>{listThree}</a>
+                <a target={"_blank"} rel="noreferrer" href={listFour}>{listFour}</a>
+                <a target={"_blank"} rel="noreferrer" href={listFive}>{listFive}</a>
+                <a target={"_blank"} rel="noreferrer" href={listSix}>{listSix}</a>
+                <a target={"_blank"} rel="noreferrer" href={listSeven}>{listSeven}</a>
+                <a target={"_blank"} rel="noreferrer" href={listEight}>{listEight}</a>
+                <a target={"_blank"} rel="noreferrer" href={listNine}>{listNine}</a>
+                <a target={"_blank"} rel="noreferrer" href={listTen}>{listTen}</a>
+            </div>
+        </>
     );
 } 
 

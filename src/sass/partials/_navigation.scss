@@ -1,18 +1,12 @@
+.nav .active {
+    color: orange;
+    i {
+    color: orange;
+    }
+}
 .nav {
     display: flex;
     justify-content: space-between;
-}
-.nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    margin: 2rem;
-    a, i { 
-        color: $light-grey; 
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-    }
 }
 .brand {
     display: flex;
@@ -37,12 +31,14 @@
         width: 0.2rem;
         height: 2.2rem;
         transform: rotate(-20deg);
+        @media only screen and (max-width: 800px)  { height: 1.5rem; }
     }
     .line-two {
         background-color: $orange;
         width: 0.2rem;
         height: 2.2rem;
         transform: rotate(-20deg);
+        @media only screen and (max-width: 800px)  { height: 1.5rem; }
     }
     h1 {
         text-transform: uppercase;
@@ -51,10 +47,52 @@
         font-size: 0.8em;
         letter-spacing: 0.4em;
         font-weight: 200;
+        @media only screen and (max-width: 800px)  { display: none; }
         span {
             font-size: 1.6em;
             font-weight: 900;
             letter-spacing: 0.1em;
         }
+    }
+}
+@media only screen and (min-width: 800px)  { //desktop
+    .fa-bars {
+        display: none;
+    }
+    .nav-links--close, .nav-links--open {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin: 2rem;
+        a, i { 
+            color: $light-grey; 
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+        }
+    }
+}
+@media only screen and (max-width: 800px)  { //phone
+    .fa-bars, .fa-times {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5em;
+    }
+    .nav-links--close {
+        display: none;
+    }
+    .nav-links--open {
+        position: absolute;
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;;
+        top: 3rem;
+        right: 0rem;
+        text-align: right;
+        background-color: $black-dark;
+        padding: 1.5rem;
+        z-index: 11;
     }
 }

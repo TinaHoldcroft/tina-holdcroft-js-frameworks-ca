@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { Helmet } from "react-helmet";
 
 const schema = yup.object().shape({
     name: yup
@@ -21,36 +22,39 @@ const schema = yup.object().shape({
 
 function Contact() {
     const { register, handleSubmit, errors } = useForm({ resolver: yupResolver(schema) });
-    
+
     function onSubmit(data) {
         console.log("data", data)
         alert('Your form has been submitted');
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <input type="text" name="name" placeholder="Enter your name" ref={register}/>
-                <i title="name" className="fas fa-user"></i>
-                <p className="error">{errors.name?.message}</p>
-            </div>
+        <>
+            <Helmet><title>Contact | VGD</title></Helmet>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                    <input type="text" name="name" placeholder="Enter your name" ref={register}/>
+                    <i title="name" className="fas fa-user"></i>
+                    <p className="error">{errors.name?.message}</p>
+                </div>
 
-            <div>
-                <input type="email" name="email" placeholder="Enter your e-mail" ref={register}/>
-                <i className="fas fa-envelope"></i>
-                <p className="error">{errors.email?.message}</p>
-            </div>
+                <div>
+                    <input type="email" name="email" placeholder="Enter your e-mail" ref={register}/>
+                    <i className="fas fa-envelope"></i>
+                    <p className="error">{errors.email?.message}</p>
+                </div>
 
-            <div>
-                <textarea type="text" name="message" placeholder="Enter your message" ref={register}/>
-                <i className="fas fa-quote-right"></i>
-                <p className="error">{errors.message?.message}</p>
-            </div>
+                <div>
+                    <textarea type="text" name="message" placeholder="Enter your message" ref={register}/>
+                    <i className="fas fa-quote-right"></i>
+                    <p className="error">{errors.message?.message}</p>
+                </div>
 
-            <div className="button-wrapper">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+                <div className="button-wrapper">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </>
     );
 }
 
