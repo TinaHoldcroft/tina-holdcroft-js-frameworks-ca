@@ -1,0 +1,73 @@
+form {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    height: 20rem;
+    width: 18rem;
+    margin-top: -10rem;
+    margin-left: -8.3rem;
+    div { 
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2.5rem; 
+    }
+    input:focus + i, textarea:focus + i { color: $orange; }
+    i {
+        margin-top: 0.9rem;
+        margin-left: -20.5rem;
+        font-size: 1.2em;
+        color: $light-grey;
+        transform: translateY(-50%);
+        transition: color .3s;
+    }
+    input, textarea  {
+        color: #fff;
+        background-color: transparent;
+        outline: none;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid $light-grey;
+        padding-bottom: 0.8em;
+        width: 100%;
+        font-size: 1em;
+        font-family: montserrat, sans-serif;
+        &:focus {
+            border-bottom: 1px solid $orange;
+        }
+        &::placeholder, &::placeholder:focus, &::placeholder:active {
+            text-transform: capitalize;
+            letter-spacing: 0.1em;
+        }
+    }
+    .fa-quote-right{
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        margin-top: -0.05em;
+    }
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    button {
+        text-transform: uppercase;
+        color: $black-dark;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        font-size: 1.2em;
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background-color: $orange;
+        border: 2px solid $orange;
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.03);
+        }
+        &:active, &:focus {
+            background-color: transparent;
+            color: $orange;
+        }
+    }
+}

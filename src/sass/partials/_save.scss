@@ -1,0 +1,22 @@
+.saved-links {
+    h5 {
+        font-size: 3em;
+        text-transform: uppercase;
+        color: $light-grey;
+        margin-bottom: 0.2em;
+    }
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    a {
+        line-height: 1.5em;
+        &:hover {
+            opacity: 0.7;
+        }
+        &:active, &:focus {
+            color: $orange;
+            outline: none;
+        }
+    }
+}
