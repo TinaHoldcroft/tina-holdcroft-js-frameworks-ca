@@ -24,7 +24,10 @@ a, a:hover{
     color: $white;
 }
 .error {
+    position: relative;
     color: $orange;
     text-transform: uppercase;
     font-size: 0.8em;
+    margin-top: 3rem;
+    margin-left: 1.3rem;
 }

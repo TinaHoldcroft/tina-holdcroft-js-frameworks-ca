@@ -13,7 +13,7 @@ form {
     }
     input:focus + i, textarea:focus + i { color: $orange; }
     i {
-        margin-top: 0.9rem;
+        margin-top: 1.8rem;
         margin-left: -20.5rem;
         font-size: 1.2em;
         color: $light-grey;
@@ -43,7 +43,7 @@ form {
     .fa-quote-right{
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
-        margin-top: -0.05em;
+        margin-top: -0.01rem;
     }
     .button-wrapper {
         display: flex;
@@ -62,9 +62,7 @@ form {
         background-color: $orange;
         border: 2px solid $orange;
         transition: 0.3s;
-        &:hover {
-            transform: scale(1.03);
-        }
+        &:hover { transform: scale(1.03); }
         &:active, &:focus {
             background-color: transparent;
             color: $orange;
