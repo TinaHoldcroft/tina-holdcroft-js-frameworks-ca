@@ -5,7 +5,7 @@ function Search({ handleSearch }) {
 	return ( 
 		<div  className="search-container">
 			<input type="text"  title="Search" placeholder="Search by name..." onChange={event => handleSearch(event)}/> 
-			<div class="search-icon"></div>
+			<div className="search-icon"></div>
 		</div>
 	);
 }

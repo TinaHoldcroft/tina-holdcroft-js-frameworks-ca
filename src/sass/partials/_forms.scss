@@ -32,9 +32,7 @@ form {
         width: 100%;
         font-size: 1em;
         font-family: montserrat, sans-serif;
-        &:focus {
-            border-bottom: 1px solid $orange;
-        }
+        &:focus { border-bottom: 1px solid $orange; }
         &::placeholder, &::placeholder:focus, &::placeholder:active {
             text-transform: capitalize;
             letter-spacing: 0.1em;
