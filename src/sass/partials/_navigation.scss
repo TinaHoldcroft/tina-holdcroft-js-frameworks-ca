@@ -1,8 +1,6 @@
 .nav .active {
-    color: orange;
-    i {
-    color: orange;
-    }
+    color: $orange;
+    i { color: $orange; }
 }
 .nav {
     display: flex;
@@ -56,14 +54,13 @@
     }
 }
 @media only screen and (min-width: 800px)  { //desktop
-    .fa-bars {
-        display: none;
-    }
+    .fa-bars { display: none; }
     .nav-links--close, .nav-links--open {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
-        margin: 2rem;
+        margin-top: 2rem;
+        margin-right: 5rem;
         a, i { 
             color: $light-grey; 
             text-transform: uppercase;

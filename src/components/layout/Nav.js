@@ -22,7 +22,6 @@ function Layout() {
                 <div className={isActive ? "nav-links--close" : "nav-links--open"}>
                     <NavLink activeClassName="active" to="/" exact className="nav-link">Games</NavLink>
                     <NavLink activeClassName="active" to="/contact" className="nav-link">Contact</NavLink>
-                    <NavLink activeClassName="active" to="/save" className="nav-link"><i className="fas fa-heart"></i></NavLink>
                 </div>
             </div>
         </>

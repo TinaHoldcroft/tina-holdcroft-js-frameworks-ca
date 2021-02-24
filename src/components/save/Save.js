@@ -1,5 +1,4 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, { useState } from "react";
 
 function Favorites() {
     const items = JSON.parse(localStorage.getItem('favorites'));
@@ -14,10 +13,13 @@ function Favorites() {
     const listNine = items.slice(8, 9);
     const listTen = items.slice(9, 10);
 
+    const handleToggle = () => { setActive(!isActive); };
+    const [isActive, setActive] = useState("false");
+
     return (
         <>
-            <Helmet><title>Saved | VGD</title></Helmet>
-            <div className="saved-links">
+            <i onClick={handleToggle}  className={isActive ? "saved-icon fas fa-heart" : "saved-icon fas fa-times"}></i>
+            <div className={isActive ? "saved saved--close" : "saved saved--open"}>
                 <h5>Saved</h5>
                 <a target={"_blank"} rel="noreferrer" href={listOne}>{listOne} </a>
                 <a target={"_blank"} rel="noreferrer" href={listTwo}>{listTwo}</a>

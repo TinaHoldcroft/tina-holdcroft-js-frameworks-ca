@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Spinner from "../spinner/Spinner";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
+import Save from "../save/Save";
+import { Helmet } from "react-helmet";
 
 function GameDetail() {
 	const [like, favourite] = useState(false);
@@ -35,17 +37,21 @@ function GameDetail() {
 	};
 
 	return (
-		<div className="detail-page">
-			<img alt={detail.name} className="detail-image" src={detail.background_image}/>
-			<h3>{detail.name}</h3>
-			<div className="detail-txt">
-				<div className="link-wrapper">
-					<i title="save website link" onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
-					<a title="View website" target={"_blank"} rel="noreferrer" href={detail.website}> View Website for {detail.name}</a>
+		<>
+			<Helmet><title>{detail.name} | VGD</title></Helmet>
+			<Save/>
+			<div className="detail-page">
+				<img alt={detail.name} className="detail-image" src={detail.background_image}/>
+				<h3>{detail.name}</h3>
+				<div className="detail-txt">
+					<div className="link-wrapper">
+						<i title="save website link" onClick={saveFavourite} className={like ? "fas fa-heart" : "far fa-heart"}></i>
+						<a title="View website" target={"_blank"} rel="noreferrer" href={detail.website}> View Website for {detail.name}</a>
+					</div>
+					<div dangerouslySetInnerHTML={{ __html: detail.description }}/>
 				</div>
-				<div dangerouslySetInnerHTML={{ __html: detail.description }}/>
 			</div>
-		</div>
+		</>
 	);
 }
 

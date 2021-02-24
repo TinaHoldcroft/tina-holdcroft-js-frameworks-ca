@@ -1,22 +1,46 @@
-.saved-links {
-    h5 {
-        font-size: 3em;
-        text-transform: uppercase;
-        color: $light-grey;
-        margin-bottom: 0.2em;
-    }
-    width: 100vw;
-    display: flex;
+.saved {
+    position: fixed;
+    top: 0vh;
+    right: 0vw;
+    height: 100vh;
+    width: 30vw;
+    background-color: $black-light;
     align-items: center;
     flex-direction: column;
+    z-index: 20;
+    @media only screen and (max-width: 800px)  { width: 100vw; }
+    h5 {
+        font-size: 2em;
+        text-transform: uppercase;
+        color: $light-grey;
+        margin-top: 5rem;
+        margin-bottom: 0.2em;
+    }
     a {
         line-height: 1.5em;
-        &:hover {
-            opacity: 0.7;
-        }
+        &:hover { opacity: 0.7; }
         &:active, &:focus {
             color: $orange;
             outline: none;
         }
     }
 }
+.saved-icon {
+    position: fixed;
+    top: 0vh;
+    right: 0vw;
+    z-index: 99;
+    color: $light-grey; 
+    font-size: 1.4em;
+    margin: 0.5rem;
+    background-color: $black-light;
+    padding: 1.2rem;
+    border-radius: 50%;
+    @media only screen and (max-width: 800px)  {  
+        top: 1.1rem;
+        right: 3.5rem; 
+        margin: 0;
+    }
+}
+.saved--open {display: flex; }
+.saved--close { display: none; }

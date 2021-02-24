@@ -4,19 +4,17 @@
     flex-direction: column;
     img {
         width: 100vw;
-        @media only screen and (max-width: 800px)  { 
-            margin-top: 1.5rem;
-        }
+        z-index: -9;
+        @media only screen and (max-width: 800px)  { margin-top: 1.5rem; }
     }
     .detail-txt {
         background-color: $black-dark;
+        z-index: 1;
         position: absolute;
         top: 100vh;
         padding: 1rem 7vw;
         text-align: justify;
-        @media only screen and (max-width: 800px)  { 
-            top: 40vh;
-        }
+        @media only screen and (max-width: 800px)  { top: 40vh; }
     }
     h3 {
         text-align: center;
@@ -49,9 +47,7 @@
             color: $light-grey;
             font-size: 1.5em;
             vertical-align: baseline;
-            &:hover {
-                border: solid 3px $light-grey;
-            }
+            &:hover, &:focus { border: solid 3px $light-grey; }
         }
         a {
             padding: 0.7rem 1rem;
