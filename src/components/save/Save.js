@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 
 function Favorites() {
+
     const items = JSON.parse(localStorage.getItem('favorites'));
+    if (items.length) {
+        console.log('saved: ' + items)
+    }
+    if (items.length === 0) {
+        console.log('no items saved')
+    }
     const listOne = items.slice(0, 1);
     const listTwo = items.slice(1, 2);
     const listThree = items.slice(2, 3);
